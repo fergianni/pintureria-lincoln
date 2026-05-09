@@ -1,0 +1,22 @@
+# Binario compilado
+lincoln
+
+# Variables de entorno (secretos)
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Dependencias Go
+vendor/
+
+# Build artifacts
+*.out
+*.test
+
+# IDE
+.idea/
+.vscode/
