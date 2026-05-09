@@ -32,6 +32,10 @@
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
         [x-cloak] { display: none !important; }
+        #hero-carousel { height: 200px; }
+        @media (min-width: 768px) {
+            #hero-carousel { height: auto; aspect-ratio: 1920/401; }
+        }
         .hero-bg {
             background: linear-gradient(135deg, #072660 0%, #0d47a1 50%, #1565c0 100%);
         }
@@ -146,10 +150,10 @@
      HERO CARRUSEL
 ═══════════════════════════════════════════════ -->
 <section
+    id="hero-carousel"
     x-data="heroSlider()"
     x-init="start()"
     class="relative overflow-hidden text-white"
-    style="aspect-ratio: 1920/401; min-height: 160px;"
 >
     <!-- Slides -->
     <template x-for="(slide, i) in slides" :key="i">
@@ -534,13 +538,18 @@ function shop() {
         loading:        true,
 
         async init() {
-            const [prods, cats] = await Promise.all([
-                fetch('/api/products').then(r => r.json()),
-                fetch('/api/categories').then(r => r.json()),
-            ]);
-            this.products   = prods || [];
-            this.categories = cats  || [];
-            this.loading    = false;
+            try {
+                const [prods, cats] = await Promise.all([
+                    fetch('/api/products').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+                    fetch('/api/categories').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+                ]);
+                this.products   = prods || [];
+                this.categories = cats  || [];
+            } catch(e) {
+                console.error('Error cargando productos:', e);
+            } finally {
+                this.loading = false;
+            }
             window.addEventListener('filter-category', (e) => {
                 const cat = this.categories.find(c => c.slug === e.detail);
                 this.filterCategory = cat ? cat.id : null;
