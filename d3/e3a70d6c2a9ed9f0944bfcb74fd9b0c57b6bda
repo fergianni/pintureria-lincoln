@@ -1,0 +1,20 @@
+web/templates/index.html
+  s_9db117d07504da::t_88c8bfac05b332 35,37
+  s_9db117d07504da::t_5ed34bfbd8a8b5 177,179-182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "d3e3a70d6c2a9ed9f0944bfcb74fd9b0c57b6bda",
+  "prompts": {},
+  "sessions": {
+    "s_9db117d07504da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "04c6cab6-fc85-4fca-84a1-c14f5fec1d4d",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Fer Gianni <fernandojgianni@gmail.com>"
+    }
+  }
+}
