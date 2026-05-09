@@ -1,0 +1,21 @@
+.gitignore
+  s_8f968b44f5d186::t_47b1d0e5db3436 1-22
+.pre-commit-config.yaml
+  s_8f968b44f5d186::t_59fdd949172e8b 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "d98599a79f26a88b4b612bdf72039eaecf713703",
+  "prompts": {},
+  "sessions": {
+    "s_8f968b44f5d186": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd0d1cdc-3f16-4dc2-8e65-b20a75b032f3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Fer Gianni <fernandojgianni@gmail.com>"
+    }
+  }
+}
