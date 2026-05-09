@@ -1,0 +1,20 @@
+main.go
+  s_9db117d07504da::t_5bf9465a8bc0c0 9
+  s_9db117d07504da::t_59a92cd7cedc3e 67-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "4ec85d64ad5407624fa609d69185e67ff4209419",
+  "prompts": {},
+  "sessions": {
+    "s_9db117d07504da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "04c6cab6-fc85-4fca-84a1-c14f5fec1d4d",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Fer Gianni <fernandojgianni@gmail.com>"
+    }
+  }
+}
