@@ -67,8 +67,9 @@ func connectDB() *sql.DB {
 		log.Fatalf("error al abrir DB: %v", err)
 	}
 	if err := db.Ping(); err != nil {
-		log.Fatalf("error al conectar DB: %v", err)
+		log.Printf("advertencia: no se pudo conectar a la DB: %v", err)
+	} else {
+		log.Println("conectado a PostgreSQL")
 	}
-	log.Println("conectado a PostgreSQL")
 	return db
 }
