@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -63,6 +64,8 @@ func connectDB() *sql.DB {
 			os.Getenv("DB_PORT"),
 			os.Getenv("DB_NAME"),
 		)
+	} else if !strings.Contains(dsn, "sslmode") {
+		dsn += "?sslmode=require"
 	}
 	db, err := sql.Open("postgres", dsn)
 	if err != nil {
